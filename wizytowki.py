@@ -1,12 +1,16 @@
-class people:
-   def __init__(self, name, surname, adress):
-       self.name = name
-       self.surname = surname
-       self.adress = adress
+from faker import Faker
+fake = Faker(['pl_PL'])
 
-person1 = people(name ="aaaa", surname ="bbbb", adress = "ccccc ccccc")
-person2 = people(name ="ffff", surname ="gg", adress = "hhhh ccccc")
-person3 = people(name ="xxxx", surname ="ccc", adress = "vvv v")
-list = (person1, person2, person3)
+class people:
+   def __init__(self, name, address):
+       self.name = name
+       self.address = address
+
+list=[]
+
+for _ in range(2):
+    person = people(name = fake.name, address = fake.address)
+    list.append(person)
+
 for item in list:
-    print(item.name, item.surname, item.adress, '\t')
+    print(item.name, item.address, '\t')
