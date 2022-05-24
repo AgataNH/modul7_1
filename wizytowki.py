@@ -1,16 +1,19 @@
 from faker import Faker
 fake = Faker(['pl_PL'])
 
-class people:
-   def __init__(self, name, address):
-       self.name = name
-       self.address = address
+class Card:
+   def __init__(self, first_name, last_name, company, job, email):
+       self.first_name = first_name
+       self.last_name = last_name
+       self.company = company
+       self.job = job
+       self.email = email
 
-list=[]
+card_list=[]
 
-for _ in range(2):
-    person = people(name = fake.name, address = fake.address)
-    list.append(person)
+for _ in range(6):
+    person = Card(first_name = fake.first_name(), last_name = fake.last_name(), company = fake.company(), job = fake.job(), email = fake.email())
+    card_list.append(person)
 
-for item in list:
-    print(item.name, item.address, '\t')
+for item in card_list:
+    print(item.first_name, item.last_name, item.company, item.job, item.email, '\t')
