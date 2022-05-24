@@ -10,7 +10,7 @@ class Card:
        self.email = email
 
    def contact(self):
-       print('Kontaktuję się z {} {}, pracującym jako {}, email: {}'.format(self.first_name, self.last_name, self.job, self.email))
+       return f'Kontaktuję się z {self.first_name} {self.last_name}, pracującym jako {self.job}, email: {self.email}'
 
    @property
    def namelength(self):
