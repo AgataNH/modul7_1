@@ -25,4 +25,5 @@ for _ in range(5):
 for item in card_list:
     print(item.first_name, item.last_name, item.company, item.job, item.email, '\t')
     print(item.namelength)
+    print(item.contact())
 
